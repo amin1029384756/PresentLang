@@ -1,0 +1,17 @@
+# Set the presentation type at the beginning
+# Currently Supported Presentation Types:
+# slides
+# video
+presentation type = slides
+
+# A scene can be any cobination of lowercase letters and numbers a-z 0-9 followed by :, and everything below it belongs to it until the next scene. Scenes are excecuted in the order they are placed in the code, from top to bottom.
+scene1:
+scene type = intro
+scene layout = default
+scene title = "A Slides Presentation"
+scene subtitle = "Created Using PresentLang"
+scene2:
+scene type = imagewithtext
+scene layout = default
+scene title = "PresentLang Benefits"
+scene text = "PresentLang makes creating presentations similar to html, where you can simply type away."
