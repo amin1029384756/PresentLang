@@ -54,7 +54,6 @@ def create_slides_presentation(presentation_details, scenes):
             text_frame = text_box.text_frame
             text_frame.text = scene_details['text']
 
-            # Add image (replace 'image_path' with the actual path to your image)
             image_path = 'image_path'
             slide.shapes.add_picture(image_path, Inches(8), Inches(2), width=Inches(8), height=Inches(4.5))
 
