@@ -8,11 +8,12 @@ presentation type = slides
 scene1:
 scene type = intro
 scene layout = intro
-scene title = "A Slides Presentation"
-scene subtitle = "Created Using PresentLang"
+scene title = A Slides Presentation
+scene subtitle = Created Using PresentLang
 
 scene2:
 scene type = default
 scene layout = default
-scene title = "PresentLang Benefits"
-scene text = "PresentLang makes creating presentations similar to html, where you can simply type away."
+scene title = PresentLang Benefits
+scene text = PresentLang makes creating presentations similar to html, where you can simply type away.
+scene imagepath = exampleimg.png

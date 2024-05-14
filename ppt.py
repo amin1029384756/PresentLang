@@ -32,31 +32,28 @@ def create_slides_presentation(presentation_details, scenes):
         # Create a new slide with the specified layout
         slide_layout = presentation.slide_layouts[layout_index]
         slide = presentation.slides.add_slide(slide_layout)
-
+        print(scene_details['subtitle'])
+        print(scene_details)
         # Handle different scene types
         if scene_details['type'] == 'intro':
-            # Set the title and subtitle in the center
             title_shape = slide.shapes.title
             title_shape.text = scene_details['title']
-            subtitle_shape = slide.placeholders[1]
-            subtitle_shape.text = scene_details['subtitle']
-            title_shape.text_frame.paragraphs[0].alignment = PP_ALIGN.CENTER
-            subtitle_shape.text_frame.paragraphs[0].alignment = PP_ALIGN.CENTER
+            subtitle_box = slide.shapes.add_textbox(Inches(1), Inches(2), Inches(14), Inches(1))
+            subtitle_box.text_frame.text = scene_details['subtitle']
 
         elif scene_details['type'] == 'default':
             # Set the title in the top left
             slide.shapes.title.text = scene_details['title']
 
-            # Add text content
-            text_box = slide.shapes.add_textbox(
-                Inches(1), Inches(2), Inches(6), Inches(4)
-            )
-            text_frame = text_box.text_frame
-            text_frame.text = scene_details['text']
+            # Add text content to the content placeholder
+            content_placeholder = slide.placeholders[1]
+            content_placeholder.text = scene_details['text']
 
-            image_path = 'image_path'
-            slide.shapes.add_picture(image_path, Inches(8), Inches(2), width=Inches(8), height=Inches(4.5))
-
+            imgpath = scene_details['imagepath']
+            if imgpath != "":
+                slide.shapes.add_picture(imgpath, Inches(8), Inches(2), width=Inches(8), height=Inches(4.5))
+            else:
+                continue
         # Set the slide background and theme
         slide.background.fill.solid()
         try:
